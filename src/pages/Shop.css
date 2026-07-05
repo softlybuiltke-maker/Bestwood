@@ -1,0 +1,164 @@
+.shop-page {
+  padding-bottom: 80px;
+  background-color: var(--color-white);
+}
+
+.shop-header {
+  background-color: var(--color-cream);
+  padding: 60px 0;
+  margin-bottom: 40px;
+}
+
+.shop-header .title-large {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.breadcrumb {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+}
+
+.sidebar-widget {
+  margin-bottom: 32px;
+}
+
+.widget-title {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-text-main);
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-list button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  transition: var(--transition-smooth);
+  font-size: 0.95rem;
+}
+
+.category-list button:hover {
+  color: var(--color-gold);
+}
+
+.category-list button.active {
+  background-color: var(--color-cream);
+  color: var(--color-walnut);
+  font-weight: 500;
+}
+
+/* Price Slider Fake UI */
+.price-slider-placeholder {
+  margin-bottom: 16px;
+}
+
+.slider-track {
+  height: 4px;
+  background-color: var(--color-gray-border);
+  border-radius: 2px;
+  position: relative;
+  margin: 16px 0;
+}
+
+.slider-fill {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  height: 100%;
+  background-color: var(--color-walnut);
+  border-radius: 2px;
+}
+
+.slider-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-walnut);
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+}
+.slider-thumb.left { left: 20%; transform: translateX(-50%); }
+.slider-thumb.right { right: 20%; transform: translateX(50%); }
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.filter-btn {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+/* Checkboxes */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.checkbox-list input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-walnut);
+  cursor: pointer;
+}
+
+/* Colors */
+.color-options {
+  display: flex;
+  gap: 12px;
+}
+
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gray-border);
+}
+
+.shop-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-widget {
+    margin-bottom: 24px;
+  }
+}

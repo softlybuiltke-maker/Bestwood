@@ -1,0 +1,75 @@
+.about-us-page {
+  background-color: var(--color-cream);
+  min-height: 100vh;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.about-badge span {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+}
+
+.badge-line {
+  height: 1px;
+  width: 40px;
+  background-color: var(--color-text-muted);
+}
+
+.about-text .description {
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+  line-height: 1.7;
+  max-width: 90%;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.about-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

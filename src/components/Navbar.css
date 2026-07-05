@@ -1,0 +1,89 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-cream);
+  padding: 1.5rem 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-left: -10px; /* Offset internal image padding to align left */
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: darken; /* Better than multiply for hiding off-white backgrounds */
+  filter: contrast(1.1); /* Enhance logo colors slightly */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text-main);
+  transition: var(--transition-smooth);
+}
+
+.navbar-links a:hover, .navbar-links a.active {
+  color: var(--color-gold);
+}
+
+.search-btn {
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.search-btn:hover {
+  color: var(--color-gold);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: var(--color-walnut);
+}
+
+@media (max-width: 1024px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-links.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-cream);
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
