@@ -58,7 +58,7 @@ export default function Footer() {
             </li>
             <li>
               <MapPin size={18} />
-              <span>Kasarani – Roisambu, Nairobi, Kenya</span>
+              <a href="https://maps.app.goo.gl/drXW6h1ZFzkcY8YN8?g_st=awb" target="_blank" rel="noopener noreferrer">Kasarani – Roisambu, Nairobi, Kenya</a>
             </li>
           </ul>
         </div>

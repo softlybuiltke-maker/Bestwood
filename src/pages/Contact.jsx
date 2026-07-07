@@ -34,7 +34,9 @@ export default function Contact() {
             <MapPin className="info-icon" />
             <div>
               <strong>Address</strong>
-              <span>123, Wood Street, Furniture City, Kenya</span>
+              <a href="https://maps.app.goo.gl/drXW6h1ZFzkcY8YN8?g_st=awb" target="_blank" rel="noopener noreferrer">
+                Kasarani – Roisambu, Nairobi, Kenya
+              </a>
             </div>
           </div>
           
