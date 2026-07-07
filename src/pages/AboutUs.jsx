@@ -32,7 +32,7 @@ export default function AboutUs() {
         </div>
         
         <div className="about-image fade-in delay-200">
-          <img src="/images/bed_wood_studio.jpg" alt="Craftsman working on wood" />
+          <img src="/images/working.jpeg" alt="Craftsman working on wood" />
         </div>
       </div>
     </div>
