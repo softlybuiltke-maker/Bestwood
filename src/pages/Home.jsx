@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Truck, Star, Award, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Truck, Award, HeartHandshake } from 'lucide-react';
 import Hero3D from '../components/Hero3D';
 import ProductCard from '../components/ProductCard';
 import { products } from '../products';
 import './Home.css';
 
 export default function Home() {
-  const featuredProducts = products;
+  const featuredProducts = products.slice(0, 8);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

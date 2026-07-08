@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, ShoppingBag } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 import './Navbar.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
+  const { getCartCount } = useCart();
 
   const isActive = (path) => location.pathname === path;
 
@@ -30,6 +32,10 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-right">
+          <Link to="/cart" className="cart-icon-btn" aria-label="Cart">
+            <ShoppingBag size={24} />
+            {getCartCount() > 0 && <span className="cart-badge">{getCartCount()}</span>}
+          </Link>
           <a 
             href="https://wa.me/254791998680?text=Hello%20Best%20Wood%20Furniture%2C%20I'm%20interested%20in%20your%20products."
             className="btn-primary"

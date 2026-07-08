@@ -65,11 +65,7 @@
   flex-grow: 1;
 }
 
-.product-card-stars {
-  display: flex;
-  gap: 2px;
-  margin-bottom: 8px;
-}
+
 
 .product-card-title {
   font-size: 1rem;

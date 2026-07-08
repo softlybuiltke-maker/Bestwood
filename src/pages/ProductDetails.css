@@ -84,18 +84,7 @@
   margin-bottom: 12px;
 }
 
-.product-stars {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 24px;
-}
 
-.review-count {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin-left: 8px;
-}
 
 .product-description {
   margin-bottom: 32px;

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Truck, ShieldCheck, RefreshCcw, CreditCard, Star } from 'lucide-react';
+import { Truck, ShieldCheck, RefreshCcw, ShoppingCart } from 'lucide-react';
 import { products } from '../products';
+import { useCart } from '../context/CartContext';
 import './ProductDetails.css';
 
 export default function ProductDetails() {
   const { id } = useParams();
   const product = products.find(p => p.id === id);
+  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
 
   if (!product) {
     return (
@@ -22,7 +25,7 @@ export default function ProductDetails() {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Best Wood Furniture, I'm interested in the ${product.name} priced at KSh ${formatPrice(product.price)}.`
+    `Hello Best Wood Furniture, I'm interested in the ${product.name} (x${quantity}) priced at KSh ${formatPrice(product.price * quantity)}.`
   );
 
   return (
@@ -50,13 +53,6 @@ export default function ProductDetails() {
         <div className="product-info fade-in delay-100">
           <h1 className="product-title">{product.name}</h1>
           <p className="product-price">KSh {formatPrice(product.price)}</p>
-          
-          <div className="product-stars">
-            {[1, 2, 3, 4, 5].map(i => (
-              <Star key={i} size={16} fill="var(--color-star)" color="var(--color-star)" />
-            ))}
-            <span className="review-count">(24 Reviews)</span>
-          </div>
 
           <div className="product-description">
             <p>{product.description} Crafted from premium solid wood. Designed for comfort, durability and timeless style.</p>
@@ -90,20 +86,34 @@ export default function ProductDetails() {
           <div className="quantity-selector">
             <span className="qty-label">Quantity:</span>
             <div className="qty-controls">
-               <button>-</button>
-               <span>1</span>
-               <button>+</button>
+               <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
+               <span>{quantity}</span>
+               <button onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
           </div>
 
-          <a 
-            href={`https://wa.me/254791998680?text=${whatsappMessage}`}
-            className="btn-primary btn-full"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Order on WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="20" style={{marginLeft: '8px'}} />
-          </a>
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+            <button 
+              className="btn-primary" 
+              style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
+              onClick={() => {
+                addToCart(product, quantity);
+                alert("Added to cart!");
+              }}
+            >
+              <ShoppingCart size={20} />
+              Add to Cart
+            </button>
+            <a 
+              href={`https://wa.me/254791998680?text=${whatsappMessage}`}
+              className="btn-primary"
+              style={{ flex: 1, backgroundColor: '#25D366', borderColor: '#25D366', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" width="20" />
+            </a>
+          </div>
 
           <div className="product-features-row">
             <div className="feature-icon-item">
